@@ -1,10 +1,6 @@
 package com.book.basics;
 
 
-import com.book.spring.xml.JdbcPersonRepository;
-import com.book.spring.xml.PersonRepository;
-import com.book.spring.xml.PersonService;
-import com.book.spring.xml.PersonServiceImpl;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.junit.Test;
 

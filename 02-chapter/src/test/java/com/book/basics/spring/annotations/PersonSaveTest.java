@@ -1,9 +1,8 @@
 package com.book.basics.spring.annotations;
 
 import com.book.basics.Person;
-import com.book.spring.annotations.PersonService;
-import com.book.spring.config.AppConfig;
-import org.junit.Before;
+import com.book.basics.PersonService;
+import com.book.spring.annotations.AppConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ public class PersonSaveTest {
 
     @Autowired
     PersonService personService;
-
     
     @Test
     public void savePerson() {

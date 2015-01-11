@@ -1,8 +1,5 @@
-package com.book.spring.xml;
+package com.book.basics;
 
-
-import com.book.basics.Person;
-import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 

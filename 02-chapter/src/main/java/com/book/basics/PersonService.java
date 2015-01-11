@@ -1,4 +1,4 @@
-package com.book.spring.annotations;
+package com.book.basics;
 
 import com.book.basics.Person;
 

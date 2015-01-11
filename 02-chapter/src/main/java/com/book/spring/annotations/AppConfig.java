@@ -1,9 +1,9 @@
-package com.book.spring.config;
+package com.book.spring.annotations;
 
-import com.book.spring.annotations.JdbcPersonRepository;
-import com.book.spring.annotations.PersonRepository;
-import com.book.spring.annotations.PersonService;
-import com.book.spring.annotations.PersonServiceImpl;
+import com.book.basics.JdbcPersonRepository;
+import com.book.basics.PersonRepository;
+import com.book.basics.PersonService;
+import com.book.basics.PersonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +25,7 @@ public class AppConfig {
     
     @Bean(name="personService")
     public PersonService getPersonService(){
-        return new PersonServiceImpl();
+        return new PersonServiceImpl(getPersonRepository());
     }
     
     @Bean(name="personRepository")

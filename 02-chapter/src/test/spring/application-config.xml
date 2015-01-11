@@ -4,10 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="personService" class="com.book.spring.xml.PersonServiceImpl">
+    <bean id="personService" class="com.book.basics.PersonServiceImpl">
         <constructor-arg ref="personRepository" />
     </bean>
-    <bean id="personRepository" class="com.book.spring.xml.JdbcPersonRepository">
+    <bean id="personRepository" class="com.book.basics.JdbcPersonRepository">
         <property name="dataSource" ref="dataSource" />
     </bean>
 

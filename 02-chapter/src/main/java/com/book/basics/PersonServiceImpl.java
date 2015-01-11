@@ -1,6 +1,4 @@
-package com.book.spring.xml;
-
-import com.book.basics.Person;
+package com.book.basics;
 
 /**
  * Created by iuliana.cosmina on 1/10/15.
