@@ -1,8 +1,9 @@
 rootProject.name = 'book-code'
 
+include '02-chapter'
 
 //we check if the modules have gradle configuration files
-println(' This project is a Personal Records Manager proof of concept. It is meant to be used together with the "String Web Study Guide" ' +
+println(' This project is a collection of simple code samples. It is meant to be used together with the "String Web Study Guide" ' +
         ' published by Apress in order to learn and practice with all Spring Web libraries. ')
 rootProject.children.each { project ->
     project.buildFileName = "${project.name}.gradle"
@@ -12,5 +13,5 @@ rootProject.children.each { project ->
     assert project.buildFile.isFile()
 }
 
-include '02-chapter'
+
 

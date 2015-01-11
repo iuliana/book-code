@@ -1,6 +1,6 @@
 allprojects {
     version = '1.0'
-    group = 'com.sample'
+    group = 'com.book'
 }
 
 subprojects {
@@ -11,12 +11,7 @@ subprojects {
         mavenCentral()
         jcenter()
     }
-
-    dependencies {
-        classpath 'com.bmuschko:gradle-tomcat-plugin:2.0'
-    }
-
-
+    
     configurations {
         all*.exclude group: "commons-logging", module: "commons-logging"
     }
