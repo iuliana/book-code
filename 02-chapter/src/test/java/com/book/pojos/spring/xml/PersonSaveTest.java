@@ -1,7 +1,7 @@
-package com.book.basics.spring.xml;
+package com.book.pojos.spring.xml;
 
-import com.book.basics.Person;
-import com.book.spring.annotations.PersonService;
+import com.book.base.Person;
+import com.book.base.PersonService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

@@ -1,8 +1,12 @@
-package com.book.basics;
+package com.book.pojos;
 
 /**
  * Created by iuliana.cosmina on 1/10/15.
  */
+
+import com.book.base.Person;
+import com.book.base.PersonRepository;
+import com.book.base.PersonService;
 
 /**
  * Created by iuliana.cosmina on 1/10/15.
@@ -16,7 +20,6 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public int save(Person person) {
-        System.out.println("... Person was saved ...");
-        return 0;
+        return repo.save(person);
     }
 }

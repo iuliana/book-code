@@ -1,4 +1,4 @@
-package com.book.basics;
+package com.book.base;
 
 import org.joda.time.DateTime;
 

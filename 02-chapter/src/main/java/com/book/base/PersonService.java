@@ -1,6 +1,4 @@
-package com.book.basics;
-
-import com.book.basics.Person;
+package com.book.base;
 
 /**
  * Created by iuliana.cosmina on 1/10/15.

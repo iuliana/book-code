@@ -1,6 +1,9 @@
-package com.book.basics;
+package com.book.pojos;
 
 
+import com.book.base.Person;
+import com.book.base.PersonRepository;
+import com.book.base.PersonService;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.junit.Test;
 

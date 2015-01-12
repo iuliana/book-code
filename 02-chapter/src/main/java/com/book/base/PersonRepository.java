@@ -1,6 +1,6 @@
-package com.book.basics;
+package com.book.base;
 
-import com.book.basics.Person;
+import com.book.base.Person;
 
 import javax.sql.DataSource;
 

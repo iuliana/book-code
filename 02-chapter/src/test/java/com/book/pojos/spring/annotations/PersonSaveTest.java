@@ -1,7 +1,7 @@
-package com.book.basics.spring.annotations;
+package com.book.pojos.spring.annotations;
 
-import com.book.basics.Person;
-import com.book.basics.PersonService;
+import com.book.base.Person;
+import com.book.base.PersonService;
 import com.book.spring.annotations.AppConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;

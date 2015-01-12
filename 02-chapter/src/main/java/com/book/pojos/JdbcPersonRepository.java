@@ -1,5 +1,8 @@
-package com.book.basics;
+package com.book.pojos;
 
+
+import com.book.base.Person;
+import com.book.base.PersonRepository;
 
 import javax.sql.DataSource;
 
@@ -15,6 +18,7 @@ public class JdbcPersonRepository implements PersonRepository {
 
     @Override
     public int save(Person person){
+        System.out.println("... Person was saved ...");
         return 0;
     }
 
