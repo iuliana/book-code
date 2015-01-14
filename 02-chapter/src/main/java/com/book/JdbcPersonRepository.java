@@ -1,4 +1,4 @@
-package com.book.pojos;
+package com.book;
 
 
 import com.book.base.Person;

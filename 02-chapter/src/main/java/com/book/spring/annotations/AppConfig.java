@@ -1,9 +1,9 @@
 package com.book.spring.annotations;
 
-import com.book.pojos.JdbcPersonRepository;
+import com.book.JdbcPersonRepository;
 import com.book.base.PersonRepository;
 import com.book.base.PersonService;
-import com.book.pojos.PersonServiceImpl;
+import com.book.PersonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

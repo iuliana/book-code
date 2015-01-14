@@ -1,4 +1,4 @@
-package com.book.pojos.spring.mixed;
+package com.book.spring.mixed;
 
 import com.book.base.Person;
 import com.book.base.PersonService;
@@ -6,8 +6,13 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by iuliana.cosmina on 1/11/15.
+ * Description: Test class exemplifying how to save a person with Spring using a mixed configuration.
+ * The XML configuration file mixed-app-config.xml contains Spring specific configuration which enable annotated classes discovery.
+ * The environment is bootstrapped using a ClassPathXmlApplicationContext instance.
  */
 public class PersonSaveTest {
 
@@ -20,7 +25,9 @@ public class PersonSaveTest {
         // Look up the application service interface
         PersonService service = context.getBean("personService", PersonService.class);
         // Use the service
-        service.save(new Person("John", "Smith", "1980-04-13"));
+        Person person = new Person("John", "Smith", "1980-04-03");
+        int result = service.save(person);
+        assertEquals(0, result);
     }
 
 }

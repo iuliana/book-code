@@ -1,4 +1,4 @@
-package com.book.pojos;
+package com.book;
 
 /**
  * Created by iuliana.cosmina on 1/10/15.
