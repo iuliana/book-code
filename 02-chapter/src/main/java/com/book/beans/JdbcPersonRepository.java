@@ -4,7 +4,8 @@ package com.book.beans;
 import com.book.base.Person;
 import com.book.base.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
@@ -21,7 +22,7 @@ public class JdbcPersonRepository implements PersonRepository {
     private DataSource dataSource;
 
     @Override
-    public int save(Person person){
+    public int save(Person person) {
         System.out.println("... @Repository: saving person ...");
         return 0;
     }

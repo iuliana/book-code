@@ -5,10 +5,10 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="personService" class="com.book.PersonServiceImpl">
-    <constructor-arg ref="personRepository" />
-</bean>
+        <constructor-arg ref="personRepository"/>
+    </bean>
     <bean id="personRepository" class="com.book.JdbcPersonRepository">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
 </beans>

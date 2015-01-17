@@ -8,7 +8,6 @@ import com.book.base.Person;
 import com.book.base.PersonRepository;
 import com.book.base.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class PersonServiceImpl implements PersonService {
     PersonRepository repo;
 
-    @Autowired
+    @Autowired(required = true)
     public PersonServiceImpl(PersonRepository personRepository) {
         this.repo = personRepository;
     }

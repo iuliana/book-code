@@ -20,7 +20,7 @@ public class PersonSave2Test {
         context.register(AppConfig.class);
         context.refresh();
         // Look up the application service interface
-        PersonService service = context.getBean("personService", PersonService.class);
+        PersonService service = (PersonService) context.getBean("personService");
         // Use the service
         Person person = new Person("John", "Smith", "1980-04-03");
         int result = service.save(person);
