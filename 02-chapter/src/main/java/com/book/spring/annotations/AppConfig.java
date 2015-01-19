@@ -4,6 +4,7 @@ import com.book.JdbcPersonRepository;
 import com.book.base.PersonRepository;
 import com.book.base.PersonService;
 import com.book.PersonServiceImpl;
+import com.book.beans.CompleteLivingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +23,11 @@ public class AppConfig {
 
     @Autowired
     Environment env;
+    
+    @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
+    public CompleteLivingBean getCompleteLivingBean() {
+        return new CompleteLivingBean();
+    }
     
     @Bean(name="personService")
     public PersonService getPersonService(){
