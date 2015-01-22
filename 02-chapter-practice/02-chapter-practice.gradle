@@ -1,0 +1,9 @@
+dependencies {
+    compile misc.slf4jApi, misc.slf4jJcl, misc.logback,
+            hibernate.ehcache, hibernate.em, hibernate.core, hibernate.validator,
+            spring.jdbc, spring.orm, spring.contextSupport, spring.data,
+            misc.dbcp, misc.h2, misc.joda
+
+    testCompile misc.junit
+    testCompile spring.test
+}
