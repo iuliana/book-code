@@ -1,6 +1,5 @@
 allprojects {
-    version = '1.0'
-    group = 'com.book'
+    version = '1.0-SNAPSHOT'
 }
 
 subprojects {
@@ -11,7 +10,7 @@ subprojects {
         mavenCentral()
         jcenter()
     }
-    
+
     configurations {
         all*.exclude group: "commons-logging", module: "commons-logging"
     }
@@ -19,7 +18,7 @@ subprojects {
 
 //We define versions for the libraries we will be using
 ext {
-    springVersion = '4.1.3.RELEASE'
+    springVersion = '4.1.4.RELEASE'
     springJpaVersion = '1.7.1.RELEASE'
     springSecurityVersion = '3.2.5.RELEASE'
     webflowVersion = '2.4.1.RELEASE'
