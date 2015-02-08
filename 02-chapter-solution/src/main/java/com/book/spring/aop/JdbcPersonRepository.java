@@ -10,6 +10,8 @@ import javax.sql.DataSource;
 
 /**
  * Created by iuliana.cosmina on 1/21/15.
+ * Description: This is a real repository. Provided with a working datasource will actually
+ * save a person record when save method is called.
  */
 @Repository("personRepository")
 public class JdbcPersonRepository implements PersonRepository {

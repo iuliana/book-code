@@ -26,7 +26,7 @@ public class PlainPersonSaveTest {
         /* End of setup */
         
         Person person = new Person("John", "Smith", "1980-04-03");
-        // TODO 2. Call method to save the person instance and store the return value into de result variable
+        // TODO 2. Call method to save the person instance and store the return value into the result variable
         int result = 0;
         assertEquals(1, result);
     }

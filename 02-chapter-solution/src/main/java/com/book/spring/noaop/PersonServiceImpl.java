@@ -13,7 +13,8 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 /**
  * Created by iuliana.cosmina on 1/21/15.
- * Description: PersonService implementation that executes a method in a transactional context, transaction is handled explicitly
+ * Description: PersonService implementation that executes a method in a transactional context,
+ * transaction is handled explicitly
  */
 @Service("personService")
 public class PersonServiceImpl implements PersonService {

@@ -9,18 +9,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 /**
  * Created by iuliana.cosmina on 1/21/15.
- * Description: PersonService implementation that executes a method in a transactional context, transaction is handled explicitly
+ * Description: PersonService implementation that executes a method in a transactional context,
+ * transaction is handled by the Spring IoC container
  */
 @Service("personService")
+@Transactional
 public class PersonServiceImpl implements PersonService {
-
-    @Autowired
-    @Qualifier("txManager")
-    PlatformTransactionManager transactionManager;
 
     @Autowired
     @Qualifier("personRepository")
@@ -31,12 +30,6 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public int save(Person person) {
-        TransactionDefinition def = new DefaultTransactionDefinition();
-        TransactionStatus status = transactionManager.getTransaction(def);
-
-        int result = repo.save(person);
-
-        transactionManager.commit(status);
-        return result;
+        return repo.save(person);
     }
 }

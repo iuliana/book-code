@@ -1,4 +1,4 @@
-package com.book.xml;
+package com.book.spring.xml;
 
 import com.book.base.Person;
 import com.book.base.PersonService;
