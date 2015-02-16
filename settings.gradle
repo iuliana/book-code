@@ -2,8 +2,6 @@ rootProject.name = 'book-code'
 
 include '02-chapter-practice'
 include '02-chapter-solution'
-include '03-chapter-practice'
-include '03-chapter-solution'
 
 //we check if the modules have gradle configuration files
 println(' This project is a collection of simple code samples. It is meant to be used together with the ' +
