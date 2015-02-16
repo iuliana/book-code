@@ -68,3 +68,19 @@ ext {
             securityConfig : "org.springframework.security:spring-security-config:$springSecurityVersion"
     ]
 }
+
+/*Task used to display dependencies for all modules in the project*/
+task allDeps << {
+    allprojects.each { p ->
+        println()
+        println " $p.name ".center(60, '*')
+        println()
+        p.configurations.all.findAll { !it.allDependencies.empty }.each { c ->
+            println " ${c.name} ".center(60, '-')
+            c.allDependencies.each { dep ->
+                println "$dep.group:$dep.name:$dep.version"
+            }
+            println "-" * 60
+        }
+    }
+}
