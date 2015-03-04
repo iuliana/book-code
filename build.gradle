@@ -5,6 +5,8 @@ allprojects {
 subprojects {
     apply plugin: 'java'
     sourceCompatibility = 1.8
+    // Make sure transitive project dependencies are resolved
+    configurations.compile.transitive = true
 
     repositories {
         mavenCentral()
@@ -69,9 +71,9 @@ ext {
     ]
 }
 
-/*Task used to display dependencies for all modules in the project*/
-task allDeps << {
-    allprojects.each { p ->
+task allDeps <<{
+    description 'Task used to display dependencies for all modules in the project'
+    subprojects.each { p ->
         println()
         println " $p.name ".center(60, '*')
         println()
@@ -81,6 +83,17 @@ task allDeps << {
                 println "$dep.group:$dep.name:$dep.version"
             }
             println "-" * 60
+        }
+    }
+}
+
+
+task allCompile << {
+    description 'Task used to compile all modules in the project without running tests'
+    subprojects.each{ p ->
+        println "Building without tests $p.name ".center(50, '.')
+        p.getTasksByName("compileJava", true).each {t ->
+            t.execute();
         }
     }
 }

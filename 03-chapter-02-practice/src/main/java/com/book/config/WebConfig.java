@@ -11,8 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Description: Simple configuration class for a Spring Web MVC application.
  */
 @Configuration
-@EnableWebMvc
-@ComponentScan(basePackages = {"com.ok.controllers"})
+/*TODO 10. Add Spring MVC specific configuration annotation */
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     //Declare our static resources. I added cache to the java config but it’s not required.

@@ -9,7 +9,6 @@ import java.util.Date;
  * Description: POJO class modelling a real person. All services handle instances of this class
  */
 public class Person {
-    
     public String firstName;
     
     public String lastName;
