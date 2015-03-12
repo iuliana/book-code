@@ -8,7 +8,7 @@
         <servlet-name>admin</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
-            <!-- TODO 10. Add Spring configuration file-->
+            <!-- TODO 10. Add reference to Spring configuration file-->
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

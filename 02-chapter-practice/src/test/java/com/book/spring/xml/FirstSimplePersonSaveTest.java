@@ -1,7 +1,7 @@
 package com.book.spring.xml;
 
 import com.book.base.Person;
-import com.book.base.PersonService;
+import com.book.base.PersonManager;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -21,12 +21,12 @@ public class FirstSimplePersonSaveTest {
         // Create the application from the configuration
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("classpath:spring/app-simple-config.xml");
-        // Look up the application service interface
-        PersonService service = null;
-        //TODO 3. Request the "personService" bean from the context and store it into the service variable
-        // Use the service
+        // Look up the application Manager interface
+        PersonManager personManager = null;
+        //TODO 3. Request the "personManager" bean from the context and store it into the Manager variable
+        // Use the Manager
         Person person = new Person("John", "Smith", "1980-04-03");
-        int result = service.save(person);
+        int result = personManager.save(person);
         assertEquals(1, result);
     }
 

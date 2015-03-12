@@ -2,16 +2,16 @@ package com.book.plain;
 
 import com.book.base.Person;
 import com.book.base.PersonRepository;
-import com.book.base.PersonService;
+import com.book.base.PersonManager;
 
 /**
  * Created by iuliana.grajdeanu on 2/1/15.
- * Decription: this a plain service class
+ * Description: this a plain Manager class
  */
-public class PlainPersonServiceImpl implements PersonService {
+public class PlainPersonManagerImpl implements PersonManager {
     PersonRepository repo;
 
-    public PlainPersonServiceImpl(PersonRepository repo) {
+    public PlainPersonManagerImpl(PersonRepository repo) {
         this.repo = repo;
     }
 

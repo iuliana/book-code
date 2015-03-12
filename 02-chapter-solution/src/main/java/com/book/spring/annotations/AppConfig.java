@@ -1,10 +1,10 @@
 package com.book.spring.annotations;
 
 import com.book.base.PersonRepository;
-import com.book.base.PersonService;
+import com.book.base.PersonManager;
 
 import com.book.plain.PlainPersonRepository;
-import com.book.plain.PlainPersonServiceImpl;
+import com.book.plain.PlainPersonManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +16,7 @@ import javax.sql.DataSource;
 
 /**
  * Created by iuliana.cosmina on 1/11/15.
+ * Description: Class which replaces a Spring XML configuration file.
  */
 @Configuration
 @PropertySource(name="dbProp", value = "classpath:datasource/db.properties")
@@ -24,14 +25,16 @@ public class AppConfig {
     @Autowired
     Environment env;
 
-    @Bean(name="personService")
-    public PersonService getPersonService(){
-        return new PlainPersonServiceImpl(getPersonRepository());
+    @Bean(name="personManager")
+    public PersonManager getPersonManager(){
+        return new PlainPersonManagerImpl(getPersonRepository());
     }
 
     @Bean(name="personRepository")
     public PersonRepository getPersonRepository(){
-        return new PlainPersonRepository();
+        PersonRepository repo = new PlainPersonRepository();
+        repo.setDataSource(getDataSource());
+        return repo;
     }
 
     @Bean(name="dataSource")

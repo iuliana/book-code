@@ -13,7 +13,6 @@ println(' This project is a collection of simple code samples. It is meant to be
         ' published by Apress in order to learn and practice with all Spring Web libraries. ')
 rootProject.children.each { project ->
     project.buildFileName = "${project.name}.gradle"
-    println('Project ' + project.name + " configuration file is " + project.buildFileName)
     assert project.projectDir.isDirectory()
     assert project.buildFile.exists()
     assert project.buildFile.isFile()

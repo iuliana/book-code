@@ -1,7 +1,7 @@
 package com.book.spring.noaop;
 
 import com.book.base.Person;
-import com.book.base.PersonService;
+import com.book.base.PersonManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +19,13 @@ import static org.junit.Assert.assertEquals;
 public class NoAopTransactionalSavePersonTest {
 
     @Autowired
-    @Qualifier("personService")
-    PersonService service;
+    @Qualifier("personManager")
+    PersonManager personManager;
 
     @Test
     public void savePerson() {
         Person person = new Person("John", "Smith", "1980-04-03");
-        int result = service.save(person);
+        int result = personManager.save(person);
         assertEquals(1, result);
     }
 }

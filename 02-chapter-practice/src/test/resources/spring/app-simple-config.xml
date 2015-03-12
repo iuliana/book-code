@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="personService" class="com.book.plain.PlainPersonServiceImpl">
+    <bean id="personManager" class="com.book.plain.PlainPersonManagerImpl">
         <constructor-arg ref="personRepository"/>
     </bean>
     <bean id="personRepository" class="com.book.plain.PlainPersonRepository">

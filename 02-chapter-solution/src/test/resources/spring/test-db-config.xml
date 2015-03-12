@@ -7,10 +7,19 @@
        http://www.springframework.org/schema/jdbc/spring-jdbc.xsd"
        xmlns:jdbc="http://www.springframework.org/schema/jdbc">
 
-    <!-- This is an embedded database, this is used only for testing-->
-    <jdbc:embedded-database id="dataSource" type="H2">
+    <!-- This is an in-memory database, this is used only for testing.
+    This is also a sample file for demonstration of jdbc namespace usage-->
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+        <property name="driverClass" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:mem:test;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
+    </bean>
+
+    <jdbc:initialize-database data-source="dataSource" ignore-failures="DROPS">
         <jdbc:script location="classpath:datasource/db-schema.sql"/>
         <jdbc:script location="classpath:datasource/db-test-data.sql"/>
-    </jdbc:embedded-database>
+    </jdbc:initialize-database>
 
 </beans>

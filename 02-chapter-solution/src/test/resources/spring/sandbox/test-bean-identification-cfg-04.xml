@@ -3,13 +3,15 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean name="sb0" class="com.book.spring.sandbox.SimpleBean"/>
     <bean id="sb1" name="sbb1,sbbb1" class="com.book.spring.sandbox.SimpleBean"/>
     <bean id="sb2" class="com.book.spring.sandbox.SimpleBean"/>
     <bean id="sb3" class="com.book.spring.sandbox.SimpleBean"/>
+
+    <bean id="id01" name="sb01" class="com.book.spring.sandbox.SimpleBean"/>
 
 </beans>

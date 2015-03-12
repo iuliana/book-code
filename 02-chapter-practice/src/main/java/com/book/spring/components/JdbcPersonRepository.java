@@ -31,7 +31,7 @@ public class JdbcPersonRepository implements PersonRepository {
         return 1;
     }
 
-    //we will not be using this setter- @Autowired will take care of injecting the dependency,
+    //we will not be using this setter - @Autowired will take care of injecting the dependency,
     // this implementation is kept here because the interface PersonRepository requires it
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;

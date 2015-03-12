@@ -3,9 +3,9 @@ package com.book.plain;
 
 import com.book.base.Person;
 import com.book.base.PersonRepository;
-import com.book.base.PersonService;
+import com.book.base.PersonManager;
 import com.book.plain.PlainPersonRepository;
-import com.book.plain.PlainPersonServiceImpl;
+import com.book.plain.PlainPersonManagerImpl;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.junit.Test;
 

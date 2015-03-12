@@ -3,9 +3,9 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Enables bean Autowiring and Autodiscovery-->
     <!-- TODO 7. Add spring configuration element needed to scan the com.book.components for annotated classes-->

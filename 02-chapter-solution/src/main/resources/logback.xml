@@ -7,15 +7,15 @@
         </encoder>
     </appender>
 
-    <logger name="com.book.beans" level="INFO" additivity="false">
+    <logger name="com.book" level="INFO" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 
-    <logger name="org.springframework" level="DEBUG" additivity="false">
+    <logger name="org.springframework" level="INFO" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>

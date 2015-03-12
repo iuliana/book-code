@@ -1,7 +1,7 @@
 package com.book.spring.annotations;
 
 import com.book.base.Person;
-import com.book.base.PersonService;
+import com.book.base.PersonManager;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -19,11 +19,11 @@ public class FirstAnnotationPersonSaveTest {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(AppConfig.class);
         context.refresh();
-        // Look up the application service interface
-        PersonService service = (PersonService) context.getBean("personService");
-        // Use the service
+        // Look up the application Manager interface
+        PersonManager Manager = (PersonManager) context.getBean("personManager");
+        // Use the Manager
         Person person = new Person("John", "Smith", "1980-04-03");
-        int result = service.save(person);
+        int result = Manager.save(person);
         assertEquals(1, result);
     }
 }

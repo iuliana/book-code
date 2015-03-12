@@ -43,16 +43,16 @@ public class CompleteLivingBean  implements InitializingBean, DisposableBean {
 
     @PreDestroy
     protected void preDestroy(){
-        logger.info("1. @PreDestroy.");
+        logger.info("6. @PreDestroy.");
     }
 
     @Override
     public void destroy() throws Exception {
-        logger.info("2. destroy.");
+        logger.info("7. destroy.");
     }
 
     protected void destroyMethod() throws Exception {
-        logger.info("3. destroy-method.");
+        logger.info("8. destroy-method.");
     }
 
 }

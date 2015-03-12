@@ -7,6 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by iuliana.cosmina on 1/19/15.
@@ -57,5 +58,13 @@ public class BeanIdentificationTest {
         assertEquals(sbb1, sbbb1);
     }
 
+    @Test
+    public void testBeans() {
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("classpath:spring/sandbox/test-bean-identification-cfg-04.xml");
+        SimpleBean sb01 = context.getBean("sb01", SimpleBean.class);
+        SimpleBean sb02 = context.getBean("id01", SimpleBean.class);
+        assertTrue(sb01 == sb02);
+    }
 
 }

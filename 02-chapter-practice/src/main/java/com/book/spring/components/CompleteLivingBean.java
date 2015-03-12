@@ -27,7 +27,7 @@ public class CompleteLivingBean  implements InitializingBean, DisposableBean {
     }
 
     @PostConstruct
-    private void postConstruct(){
+    public void postConstruct(){
         logger.info("3. @PostConstruct.");
     }
 
@@ -36,12 +36,12 @@ public class CompleteLivingBean  implements InitializingBean, DisposableBean {
         logger.info("4. afterPropertiesSet.");
     }
 
-    private void initMethod(){
+    public void initMethod(){
         logger.info("5. init-method.");
     }
 
     @PreDestroy
-    protected void preDestroy(){
+    public void preDestroy(){
         logger.info("1. @PreDestroy.");
     }
 
@@ -50,7 +50,7 @@ public class CompleteLivingBean  implements InitializingBean, DisposableBean {
         logger.info("2. destroy.");
     }
 
-    protected void destroyMethod() throws Exception {
+    public void destroyMethod() throws Exception {
         logger.info("3. destroy-method.");
     }
 

@@ -3,7 +3,7 @@ package com.book.plain;
 
 import com.book.base.Person;
 import com.book.base.PersonRepository;
-import com.book.base.PersonService;
+import com.book.base.PersonManager;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.junit.Test;
 
@@ -23,12 +23,12 @@ public class PlainPersonSaveTest {
         PersonRepository repo = new PlainPersonRepository();
         DataSource dataSource = new BasicDataSource();
         repo.setDataSource(dataSource);
-        PersonService personService = new PlainPersonServiceImpl(repo);
+        PersonManager personManager = new PlainPersonManagerImpl(repo);
         /* End of setup */
         
         Person person = new Person("John", "Smith", "1980-04-03");
-        // calling the service method
-        int result = personService.save(person);
+        // calling the Manager method
+        int result = personManager.save(person);
         assertEquals(1, result);
     }
 

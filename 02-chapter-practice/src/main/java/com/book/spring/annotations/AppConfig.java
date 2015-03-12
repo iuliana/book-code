@@ -1,9 +1,9 @@
 package com.book.spring.annotations;
 
 import com.book.base.PersonRepository;
-import com.book.base.PersonService;
+import com.book.base.PersonManager;
 import com.book.plain.PlainPersonRepository;
-import com.book.plain.PlainPersonServiceImpl;
+import com.book.plain.PlainPersonManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,7 @@ public class AppConfig {
     @Autowired
     Environment env;
 
-    /* TODO 6. Create method which instantiates a valid bean of type PersonService and names it "personService" */
+    /* TODO 6. Create method which instantiates a valid bean of type PersonManager and names it "personManager" */
 
     @Bean(name="personRepository")
     public PersonRepository getPersonRepository(){

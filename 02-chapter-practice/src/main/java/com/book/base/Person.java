@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  * Created by iuliana.cosmina on 1/11/15.
- * Description: POJO class modelling a real person. All services handle instances of this class
+ * Description: POJO class modelling a real person. All managers handle instances of this class
  */
 public class Person {
     public String firstName;
