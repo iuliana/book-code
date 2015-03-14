@@ -11,3 +11,7 @@ dependencies {
     testCompile misc.junit
     testCompile spring.test
 }
+
+gretty {
+    port = 8081
+}

@@ -6,6 +6,10 @@ include '03-chapter-01-practice'
 include '03-chapter-01-solution'
 include '03-chapter-02-practice'
 include '03-chapter-02-solution'
+include '03-chapter-03-practice'
+include '03-chapter-03-solution'
+include '03-chapter-04-solution'
+include '03-chapter-04-practice'
 
 //we check if the modules have gradle configuration files
 println(' This project is a collection of simple code samples. It is meant to be used together with the ' +
@@ -17,9 +21,3 @@ rootProject.children.each { project ->
     assert project.buildFile.exists()
     assert project.buildFile.isFile()
 }
-
-
-
-
-
-
