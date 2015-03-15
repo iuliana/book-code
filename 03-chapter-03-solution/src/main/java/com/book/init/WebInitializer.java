@@ -1,25 +1,28 @@
 package com.book.init;
 
-import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.XmlWebApplicationContext;
-import org.springframework.web.servlet.DispatcherServlet;
-
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
+import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
 
 /**
  * Created by iuliana.cosmina on 3/14/15.
  */
-public class WebInitializer implements WebApplicationInitializer {
+public class WebInitializer extends AbstractDispatcherServletInitializer {
 
     @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
-        XmlWebApplicationContext appContext = new XmlWebApplicationContext();
-        appContext.setConfigLocation("/WEB-INF/spring/mvc-config.xml");
+    protected WebApplicationContext createRootApplicationContext() {
+        return null;
+    }
 
-        ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcher", new DispatcherServlet(appContext));
-        registration.setLoadOnStartup(1);
-        registration.addMapping("/");
+    @Override
+    protected WebApplicationContext createServletApplicationContext() {
+        XmlWebApplicationContext cxt = new XmlWebApplicationContext();
+        cxt.setConfigLocation("/WEB-INF/spring/mvc-config.xml");
+        return cxt;
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[] { "/" };
     }
 }
