@@ -11,6 +11,7 @@ include '03-chapter-03-solution'
 include '03-chapter-04-solution'
 include '03-chapter-04-practice'
 
+
 //we check if the modules have gradle configuration files
 println(' This project is a collection of simple code samples. It is meant to be used together with the ' +
         '"SpringSource Certified Spring Web Application Developer Exam" ' +
