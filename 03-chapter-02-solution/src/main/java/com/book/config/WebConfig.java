@@ -12,7 +12,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.ok.controllers"})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     //Declare our static resources. I added cache to the java config but it’s not required.

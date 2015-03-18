@@ -8,26 +8,24 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
-
     <!-- Defines basic MVC defaults (handler adapter, mapping, date formatting, etc) -->
     <mvc:annotation-driven/>
-
 
     <!--
    Configures a handler for serving static resources by forwarding to the Servlet container's default Servlet.
     -->
     <mvc:default-servlet-handler/>
 
-    <!-- Serves up cached and compressed static content at /resources/* from the webapp root and classpath  -->
+    <!-- Serves up cached and compressed static content at /images/* from the webapp root and classpath  -->
     <mvc:resources mapping="/images/**" location="/images/"/>
 
-    <!-- Define controllers which only render pages (i.e. nothing added to the model) -->
+    <!-- Define controllers which only render pages (no model, nor controller needed) -->
     <mvc:view-controller path="/" view-name="welcome"/>
 
+    <!-- View resolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/" />
         <property name="suffix" value=".jsp" />
     </bean>
-
 
 </beans>

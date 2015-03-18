@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring Sample Web Application</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/styles/general.css}"/>
+
+</head>
+<div class="banner">
+<img alt="Simple tymeleaf application" title="logo"
+     th:src="@{/images/banner.png}"/>
+</div>
+
+<h4>
+    Welcome to the sample page with Spring MVC and Thymeleaf!
+    <br/>
+    Here is a list of random persons:
+</h4>
+
+<div class="content" th:if="${not #lists.isEmpty(personList)}">
+    <table>
+        <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="person : ${personList}">
+            <td th:text="${person.firstName}">John</td>
+            <td th:text="${person.lastName}">Smith</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

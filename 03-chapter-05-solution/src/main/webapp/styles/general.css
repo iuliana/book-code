@@ -1,0 +1,34 @@
+table {
+    background-color: #FFFFE0;
+    border-collapse: collapse;
+    color: #000;
+}
+
+table thead {
+    background-color: #BDB76B;
+    color: white;
+    width: 50%;
+    font-weight: bold;
+}
+
+table td th {
+    padding: 5px;
+    border: 0;
+}
+
+table td {
+    border-bottom: 1px dotted #BDB76B;
+}
+
+.banner{
+    line-height:30px;
+    width:60px;
+    float:left;
+    padding:5px;
+}
+
+.content {
+    background-color: #D8F6CE;
+    float: left;
+    padding: 10px;
+}

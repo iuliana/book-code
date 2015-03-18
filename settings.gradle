@@ -10,6 +10,7 @@ include '03-chapter-03-practice'
 include '03-chapter-03-solution'
 include '03-chapter-04-solution'
 include '03-chapter-04-practice'
+include '03-chapter-05-solution'
 
 
 //we check if the modules have gradle configuration files
@@ -22,3 +23,4 @@ rootProject.children.each { project ->
     assert project.buildFile.exists()
     assert project.buildFile.isFile()
 }
+
