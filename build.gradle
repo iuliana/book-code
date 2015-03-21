@@ -34,6 +34,8 @@ ext {
     h2Version = '1.4.184'
     logbackVersion = '1.1.2'
     thymeleafVersion = '2.1.4.RELEASE'
+    poiVersion='3.11'
+    itextpdfVersion='5.5.5'
 
     //we group libraries by their purpose so we can import them easier in the modules
     misc = [
@@ -48,7 +50,9 @@ ext {
             tilesJsp   : "org.apache.tiles:tiles-jsp:$tilesVersion",
             tilesReqApi: "org.apache.tiles:tiles-request-api:1.0.6",
             thymeleaf  : "org.thymeleaf:thymeleaf:$thymeleafVersion",
-            thymeleafSpring4 : "org.thymeleaf:thymeleaf-spring4:$thymeleafVersion"
+            thymeleafSpring4 : "org.thymeleaf:thymeleaf-spring4:$thymeleafVersion",
+            poi        : "org.apache.poi:poi:${poiVersion}",
+            itextpdf   : "com.itextpdf:itextpdf:${itextpdfVersion}"
     ]
 
     hibernate = [

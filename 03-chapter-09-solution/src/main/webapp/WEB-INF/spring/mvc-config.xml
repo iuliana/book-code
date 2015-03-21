@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+<!-- Defines basic MVC defaults (handler adapter, mapping, date formatting, etc) -->
+    <mvc:annotation-driven/>
+
+    <!--
+   Configures a handler for serving static resources by forwarding to the Servlet container's default Servlet.
+    -->
+    <mvc:default-servlet-handler/>
+
+    <!-- Serves up cached and compressed static content at /resources/* from the webapp root and classpath  -->
+    <mvc:resources mapping="/images/**" location="/images/"/>
+    <mvc:resources mapping="/styles/**" location="/styles/"/>
+
+    <!-- Define controllers which only render pages (i.e. nothing added to the model) -->
+    <mvc:view-controller path="/" view-name="/person"/>
+
+    <context:component-scan base-package="com.book"/>
+
+
+    <!-- **************************************************************** -->
+    <!-- THYMELEAF-SPECIFIC ARTIFACTS -->
+    <!-- TemplateResolver <- TemplateEngine <- ViewResolver -->
+    <!-- **************************************************************** -->
+    <bean id="templateResolver"
+          class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
+        <property name="prefix" value="/WEB-INF/person/" />
+        <property name="suffix" value=".html" />
+        <property name="templateMode" value="HTML5" />
+        <!-- Template cache is true by default. Set to false if you want -->
+        <!-- templates to be automatically updated when modified. -->
+        <property name="cacheable" value="true" />
+    </bean>
+    <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver" />
+    </bean>
+    <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine" />
+        <property name="order" value="1"/>
+    </bean>
+
+</beans>

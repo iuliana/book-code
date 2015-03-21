@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Used to discover and autowire beans annotated bean definitions -->
+    <context:component-scan base-package="com.book"/>
+
+    <mvc:annotation-driven/>
+
+    <!-- Define a custom ConversionService -->
+    <bean id="typeConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="com.book.util.DateFormatter"/>
+            </set>
+        </property>
+    </bean>
+
+    <!--
+      Configures a handler for serving static resources by forwarding to the
+      Servlet container's default org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping.
+    -->
+    <mvc:default-servlet-handler/>
+    <!-- Serves up cached and compressed static content at /resources/* from the webapp root and classpath  -->
+    <mvc:resources mapping="/images/**" location="/images/"/>
+    <mvc:resources mapping="/styles/**" location="/styles/"/>
+
+    <!-- Mapping views that do not need controllers -->
+    <mvc:view-controller path="/" view-name="home"/>
+    <mvc:view-controller path="/home" view-name="home"/>
+
+    <!-- The resolvers defined in the application-->
+    <bean id="xlsViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"
+            p:order="0"/>
+
+    <!-- Resolves view names to protected .jsp resources within the /WEB-INF directory -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/"
+          p:suffix=".jsp"
+          p:order="1"/>
+
+
+    <!--  Internationalization Bean-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>/WEB-INF/messages/global</value>
+            </list>
+        </property>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+</beans>

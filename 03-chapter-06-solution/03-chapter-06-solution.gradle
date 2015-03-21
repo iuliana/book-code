@@ -6,7 +6,7 @@ dependencies {
             hibernate.ehcache, hibernate.em, hibernate.core, hibernate.validator,
             spring.jdbc, spring.orm, spring.contextSupport, spring.data,
             spring.webmvc,
-            misc.dbcp, misc.h2, misc.joda, misc.jstl, misc.thymeleaf, misc.thymeleafSpring4
+            misc.dbcp, misc.h2, misc.joda, misc.jstl, misc.poi, misc.itextpdf
 
     testCompile misc.junit
     testCompile spring.test
@@ -14,5 +14,5 @@ dependencies {
 
 gretty {
     port = 8080
-    contextPath = '/mvc-handling'
+    contextPath = '/mvc-thyme'
 }
