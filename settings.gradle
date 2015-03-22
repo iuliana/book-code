@@ -12,7 +12,7 @@ include '03-chapter-04-solution'
 include '03-chapter-04-practice'
 include '03-chapter-05-solution'
 include '03-chapter-06-solution'
-
+include '03-chapter-07-solution'
 
 
 include '03-chapter-09-solution'
@@ -27,6 +27,8 @@ rootProject.children.each { project ->
     assert project.buildFile.exists()
     assert project.buildFile.isFile()
 }
+
+
 
 
 

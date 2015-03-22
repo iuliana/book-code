@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Used to discover and autowire beans annotated bean definitions -->
+    <context:component-scan base-package="com.book"/>
+
+    <mvc:annotation-driven/>
+
+    <!-- Define a custom ConversionService -->
+    <bean id="typeConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="com.book.util.DateFormatter"/>
+            </set>
+        </property>
+    </bean>
+
+    <!--
+      Configures a handler for serving static resources by forwarding to the
+      Servlet container's default org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping.
+    -->
+    <mvc:default-servlet-handler/>
+    <!-- Serves up cached and compressed static content at /resources/* from the webapp root and classpath  -->
+    <mvc:resources mapping="/images/**" location="/images/"/>
+    <mvc:resources mapping="/styles/**" location="/styles/"/>
+
+    <!-- Mapping views that do not need controllers -->
+    <mvc:view-controller path="/" view-name="home"/>
+    <mvc:view-controller path="/home" view-name="home"/>
+
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver" p:order="0">
+
+        <property name="defaultViews">
+            <list>
+                <!-- Excel view-->
+                <bean class="com.book.views.PersonsExcelView"/>
+                <!-- PDF view-->
+                <bean class="com.book.views.PersonsPdfView"/>
+                <!-- JSON View -->
+                <bean  class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+            </list>
+        </property>
+
+
+        <property name="contentNegotiationManager">
+            <bean class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+                <property name="mediaTypes">
+                    <map>
+                        <entry key="html" value="text/html"/>
+                        <entry key="xls" value="application/vnd.ms-excel"/>
+                        <entry key="pdf" value="application/pdf"/>
+                        <entry key="json" value="application/json"/>
+                    </map>
+                </property>
+                <property name="defaultContentType" value="text/html"/>
+                <property name="ignoreAcceptHeader" value="true"/>
+                <property name="favorParameter" value="false"/>
+                <property name="favorPathExtension" value="true"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- If no extension matched, use JSP view -->
+    <!-- Resolves view names to protected .jsp resources within the /WEB-INF directory -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/"
+          p:suffix=".jsp"
+          p:order="1"/>
+
+    <!--  Internationalization Bean-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>/WEB-INF/messages/global</value>
+            </list>
+        </property>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+</beans>
