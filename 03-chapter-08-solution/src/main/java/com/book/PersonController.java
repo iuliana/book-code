@@ -18,13 +18,12 @@ public class PersonController {
     public String list(Model model) {
         List<Person> persons = new ArrayList<>();
         // we locally create a list to populate the model
-        persons.add(new Person("John", "Smith"));
-        persons.add(new Person("Jane", "Doe"));
-        persons.add(new Person("Jason", "Bourne"));
-        persons.add(new Person("Evelyn", "Salt"));
+        persons.add(new Person(1L,"John", "Smith"));
+        persons.add(new Person(2L,"Jane", "Doe"));
+        persons.add(new Person(3L,"Jason", "Bourne"));
+        persons.add(new Person(4L,"Evelyn", "Salt"));
 
         model.addAttribute(persons);
-        System.out.println("Aaaaaaaaaaaa: " + persons);
         return "list";
     }
 

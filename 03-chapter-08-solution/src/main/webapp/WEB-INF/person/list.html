@@ -22,12 +22,14 @@
     <table>
         <thead>
         <tr>
+            <td>Cnt.</td>
             <td>First Name</td>
             <td>Last Name</td>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="person : ${personList}">
+        <tr th:each="person,iterationStatus : ${personList}">
+            <td><a th:text="${iterationStatus.count}" href="show.html" th:href="@{/person/__${person.id}__}">1</a></td>
             <td th:text="${person.firstName}">John</td>
             <td th:text="${person.lastName}">Smith</td>
         </tr>
