@@ -20,32 +20,9 @@ public class PersonsController {
     @Autowired
     private PersonGenerator personGenerator;
 
-   /* @RequestMapping( "/persons")
-    public String list(Model model) {
-        model.addAttribute("persons", personGenerator.getAll());
-        return "persons/list";
-    }
-
-    @RequestMapping("/persons.xls")
-    public String excel(Model model) {
-        model.addAttribute("persons", personGenerator.getAll());
-        return "persons/list.xls";
-    }
-
-    @RequestMapping("/persons.pdf")
-    public String pdf(Model model) {
-        model.addAttribute("persons", personGenerator.getAll());
-        return "persons/list.pdf";
-    }*/
-
     @RequestMapping("/persons")
     public String list(Model model,HttpServletRequest rq) {
         model.addAttribute("persons", personGenerator.getAll());
-        if (rq.getRequestURL().toString().endsWith("xls")) {
-            return "persons/list.xls";
-        } else if (rq.getRequestURL().toString().endsWith("pdf")) {
-            return "persons/list.pdf";
-        }
         return "persons/list";
     }
 

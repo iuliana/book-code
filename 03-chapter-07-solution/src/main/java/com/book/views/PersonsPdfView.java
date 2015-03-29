@@ -26,7 +26,7 @@ public class PersonsPdfView extends AbstractPdfView {
 
         List<Person> persons = (List<Person>) model.get("persons");
 
-        document.add(new Chunk("Accounts: "));
+        document.add(new Chunk("Persons: "));
         // Create table with 3 columns.
         PdfPTable table = new PdfPTable(3);
         table.addCell(new Paragraph("First Name"));
