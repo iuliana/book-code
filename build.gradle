@@ -20,7 +20,7 @@ subprojects {
 
 //We define versions for the libraries we will be using
 ext {
-    springVersion = '4.1.5.RELEASE'
+    springVersion = '4.1.6.RELEASE'
     springJpaVersion = '1.7.1.RELEASE'
     springSecurityVersion = '3.2.5.RELEASE'
     webflowVersion = '2.4.1.RELEASE'
@@ -78,7 +78,14 @@ ext {
             contextSupport : "org.springframework:spring-context-support:$springVersion",
             securityWeb    : "org.springframework.security:spring-security-web:$springSecurityVersion",
             securityTaglibs: "org.springframework.security:spring-security-taglibs:$springSecurityVersion",
-            securityConfig : "org.springframework.security:spring-security-config:$springSecurityVersion"
+            securityConfig : "org.springframework.security:spring-security-config:$springSecurityVersion",
+            asm            : "org.springframework:spring-asm:3.1.4.RELEASE",
+            mvcPortlet     : "org.springframework:spring-webmvc-portlet:$springVersion"
+    ]
+
+    others = [
+            portlet : "javax.portlet:portlet-api:2.0",
+            standard: "taglibs:standard:1.1.2"
     ]
 }
 
