@@ -3,5 +3,6 @@
  <display>
  	<category name="book.com.hello">
  		<portlet id="helloWorld" />
+        <portlet id="helloWorld2" />
  	</category>
  </display>

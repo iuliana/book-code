@@ -7,4 +7,10 @@
  		<instanceable>true</instanceable>
  		<remoteable>true</remoteable>
  	</portlet>
+
+    <portlet>
+        <portlet-name>helloWorld2</portlet-name>
+        <instanceable>true</instanceable>
+        <remoteable>true</remoteable>
+    </portlet>
  </liferay-portlet-app>
