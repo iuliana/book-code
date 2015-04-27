@@ -27,16 +27,16 @@ public class HelloWorldController2 {
     /**
      * We do not need to do anything here. Just put this empty method here to give an example of action methods
      */
-    @ActionMapping(value="doSomething")
+    @ActionMapping("doSomething")
     public void action(ActionRequest request, ActionResponse response){
     }
 
     /**
-     * We do not need to do anything here. Just put this empty method here to give an example of resource request methods
+     *  Resource mapping example. The text will be sent to the browser as it is.
      */
-    @ResourceMapping(value = "loadSearchResults")
-    public void loadSearchResults(ResourceRequest resourceRequest, ResourceResponse resourceResponse){
-       // resourceResponse.getWriter().write(dataResponse);
+    @ResourceMapping("testResource")
+    public void loadSearchResults(ResourceRequest resourceRequest, ResourceResponse resourceResponse) throws IOException {
+        resourceResponse.getWriter().write("This text was printed via a resource request");
     }
 
 }
