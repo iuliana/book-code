@@ -16,7 +16,19 @@
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"
           p:caseSensitive="true"/>
 
+    <bean id="annotationMethodHandlerAdapter"
+          class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
     <mvc:view-controller path="/" view-name="index"/>
+
+    <!--
+     Configures a handler for serving static resources by forwarding to the Servlet container's default Servlet.
+     -->
+    <mvc:default-servlet-handler/>
+
+    <!-- Serves up cached and compressed static content at /images/* from the webapp root and classpath  -->
+    <mvc:resources mapping="/images/*" location="/images/"/>
+    <mvc:resources mapping="/styles/*" location="/styles/"/>
 
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
