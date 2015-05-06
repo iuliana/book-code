@@ -12,7 +12,7 @@ import java.util.List;
  * Created by iuliana.cosmina on 3/18/15.
  */
 @Controller
-public class PersonController {
+public class PersonsController {
 
     @RequestMapping({"/", "/person"})
     public String list(Model model) {
