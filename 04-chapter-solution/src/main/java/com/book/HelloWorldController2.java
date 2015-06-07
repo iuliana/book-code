@@ -25,18 +25,17 @@ public class HelloWorldController2 {
     }
 
     /**
-     * We do not need to do anything here. Just put this empty method here to give an example of action methods
+     * We do not need to do anything here. Empty method given as example of how action methods are defined.
      */
     @ActionMapping("doSomething")
     public void action(ActionRequest request, ActionResponse response){
     }
 
     /**
-     *  Resource mapping example. The text will be sent to the browser as it is.
+     *Example of resource request method
      */
-    @ResourceMapping("testResource")
-    public void loadSearchResults(ResourceRequest resourceRequest, ResourceResponse resourceResponse) throws IOException {
-        resourceResponse.getWriter().write("This text was printed via a resource request");
+    @ResourceMapping(value = "getData")
+    public void getData(ResourceRequest resourceRequest, ResourceResponse resourceResponse) throws IOException {
+        resourceResponse.getWriter().write("Test data for Ajax call.");
     }
-
 }

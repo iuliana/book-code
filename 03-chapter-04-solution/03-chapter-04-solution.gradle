@@ -6,7 +6,7 @@ dependencies {
             hibernate.ehcache, hibernate.em, hibernate.core, hibernate.validator,
             spring.jdbc, spring.orm, spring.contextSupport, spring.data,
             spring.webmvc,
-            misc.dbcp, misc.h2, misc.joda
+            misc.dbcp, misc.h2, misc.joda, others.httpClient
 
     testCompile misc.junit
     testCompile spring.test

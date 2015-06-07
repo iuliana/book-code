@@ -84,7 +84,8 @@ ext {
 
     others = [
             portlet : "javax.portlet:portlet-api:2.0",
-            standard: "taglibs:standard:1.1.2"
+            standard: "taglibs:standard:1.1.2",
+            httpClient: "commons-httpclient:commons-httpclient:3.1"
     ]
 }
 
