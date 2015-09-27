@@ -20,9 +20,10 @@ subprojects {
 
 //We define versions for the libraries we will be using
 ext {
-    springVersion = '4.1.6.RELEASE'
-    springJpaVersion = '1.7.1.RELEASE'
-    springSecurityVersion = '3.2.5.RELEASE'
+    springVersion = '4.2.1.RELEASE'
+    springJpaVersion = '1.8.2.RELEASE'
+    springBootVersion = '1.2.6.RELEASE'
+    springSecurityVersion = '4.0.1.RELEASE'
     webflowVersion = '2.4.1.RELEASE'
     junitVersion = '4.12'
     slf4jVersion = '1.7.9'
@@ -37,6 +38,14 @@ ext {
     poiVersion = '3.11'
     itextpdfVersion = '5.5.5'
     jacksonVersion = '2.5.1'
+
+    boot = [
+            springBootPlugin: "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion",
+            starterWeb      : "org.springframework.boot:spring-boot-starter-web:$springBootVersion",
+            starterJetty    : "org.springframework.boot:spring-boot-starter-jetty:$springBootVersion",
+            actuator        : "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion",
+            yaml            : "org.yaml:snakeyaml:1.16"
+    ]
 
     //we group libraries by their purpose so we can import them easier in the modules
     misc = [
@@ -83,8 +92,8 @@ ext {
     ]
 
     others = [
-            portlet : "javax.portlet:portlet-api:2.0",
-            standard: "taglibs:standard:1.1.2",
+            portlet   : "javax.portlet:portlet-api:2.0",
+            standard  : "taglibs:standard:1.1.2",
             httpClient: "commons-httpclient:commons-httpclient:3.1"
     ]
 }

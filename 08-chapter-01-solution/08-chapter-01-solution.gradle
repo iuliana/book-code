@@ -1,0 +1,21 @@
+apply plugin: 'spring-boot'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath boot.springBootPlugin
+    }
+}
+
+dependencies {
+
+    compile (boot.starterWeb){
+        exclude module : "spring-boot-starter-tomcat"
+    }
+    compile boot.starterJetty, boot.actuator, boot.yaml
+
+    testCompile misc.junit
+}
