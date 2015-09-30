@@ -1,26 +1,23 @@
 package com.book.init;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import javax.annotation.PostConstruct;
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by iuliana.cosmina on 9/27/15.
  */
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-
-@Configuration
-@EnableConfigurationProperties
 @ConfigurationProperties(prefix="app")
-public class YamlConfigHolder {
-    private static Logger logger = LoggerFactory.getLogger(YamlConfigHolder.class);
+public class AppSettings {
 
+    private static Logger logger = LoggerFactory.getLogger(AppSettings.class);
+
+    @NotNull
     private Integer port;
+
+    @NotNull
     private String context;
 
     public Integer getPort() {
@@ -39,7 +36,7 @@ public class YamlConfigHolder {
         this.context = context;
     }
 
-    public YamlConfigHolder() {
+    public AppSettings() {
     }
 
     @PostConstruct

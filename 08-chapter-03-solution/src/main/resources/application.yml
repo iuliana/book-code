@@ -1,3 +1,4 @@
 app:
-  port:8082
-  context:/boot
+  port: 8084
+  context: /boot
+  message: Testing, is this thing on?

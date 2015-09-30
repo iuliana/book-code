@@ -17,5 +17,5 @@ dependencies {
     }
     compile boot.starterJetty, boot.actuator, boot.yaml
 
-    testCompile misc.junit
+    testCompile misc.junit, misc.hamcrestCore, misc.hamcrestLib, boot.starterTest
 }
