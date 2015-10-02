@@ -6,10 +6,25 @@
     <script src="ext/stomp.js"></script>
     <script src="ext/jquery-2.1.4.js"></script>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="css/general.css">
 </head>
 <body>
-<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled.
+    Please enable
     Javascript and reload this page!</h2></noscript>
-<h3>This is a simple mirc-like web chat application, no authentication is necessary, just provide a name and start chatting!</h3>
+<h4>This is a simple mirc-like web chat application, no authentication is necessary, just provide a name and start chatting!</h4>
+
+<div class="header">
+    Name : <input id="name" type="text"/>
+    <input id="connection" type="button"/>
+</div>
+<div class="chatDiv">
+    <textarea class="chat"></textarea>
+</div>
+<div class="footer">
+    <input id="content" type="text"/>
+    <input id="send" type="button" value="Send"/>
+</div>
+
 </body>
 </html>
