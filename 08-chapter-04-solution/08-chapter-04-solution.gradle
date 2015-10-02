@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath boot.springBootPlugin
+    }
+}
+
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'ws-mirc'
+    version = '1.0-SNAPSHOT'
+}
+
+dependencies {
+    compile boot.starterJetty
+    compile (boot.starterWebSocket){
+        exclude module : "spring-boot-starter-tomcat"
+    }
+    testCompile misc.junit, misc.hamcrestCore, misc.hamcrestLib, boot.starterTest
+}
