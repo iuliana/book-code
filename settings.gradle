@@ -18,6 +18,7 @@ include '04-chapter-solution'
 include '08-chapter-01-solution'
 include '08-chapter-02-solution'
 include '08-chapter-03-solution'
+include '08-chapter-04-solution'
 
 //we check if the modules have gradle configuration files
 println(' This project is a collection of simple code samples. It is meant to be used together with the ' +

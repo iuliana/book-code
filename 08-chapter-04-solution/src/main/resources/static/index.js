@@ -13,7 +13,6 @@ $(function () {
                 stompClient = Stomp.over(socket);
                 stompClient.connect({}, function (frame) {
                     setConnected(true);
-                    console.log('Connected: ' + frame);
                     stompClient.subscribe('/topic/chat', function (message) {
                         showMessage(JSON.parse(message.body).content);
                     });
@@ -23,7 +22,6 @@ $(function () {
                 //disconnecting
                 stompClient.disconnect();
                 setConnected(false);
-                console.log("Disconnected");
             }
         }
     });
@@ -46,6 +44,5 @@ function setConnected(connected) {
 }
 
 function showMessage(message) {
-    console.log('something weird ' + message);
     $('.chat').append(message + '&#xA;');
 }

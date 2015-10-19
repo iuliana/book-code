@@ -43,6 +43,7 @@ ext {
     boot = [
             springBootPlugin: "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion",
             starterWeb      : "org.springframework.boot:spring-boot-starter-web:$springBootVersion",
+            starterWebSocket: "org.springframework.boot:spring-boot-starter-websocket:$springBootVersion",
             starterJetty    : "org.springframework.boot:spring-boot-starter-jetty:$springBootVersion",
             starterTest     : "org.springframework.boot:spring-boot-starter-test:$springBootVersion",
             actuator        : "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion",
@@ -93,7 +94,8 @@ ext {
             securityWeb    : "org.springframework.security:spring-security-web:$springSecurityVersion",
             securityTaglibs: "org.springframework.security:spring-security-taglibs:$springSecurityVersion",
             securityConfig : "org.springframework.security:spring-security-config:$springSecurityVersion",
-            mvcPortlet     : "org.springframework:spring-webmvc-portlet:$springVersion"
+            mvcPortlet     : "org.springframework:spring-webmvc-portlet:$springVersion",
+            messaging     : "org.springframework:spring-messaging:$springVersion"
     ]
 
     others = [
