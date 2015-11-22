@@ -125,8 +125,20 @@ task allDeps << {
 task allCompile << {
     description 'Task used to compile all modules in the project without running tests'
     subprojects.each { p ->
-        println "Building without tests $p.name ".center(50, '.')
+        p.getTasksByName("clean", true).each { t ->
+            println "-> $p.name [CLEAN]"
+            t.execute();
+        }
         p.getTasksByName("compileJava", true).each { t ->
+            println "-> $p.name [COMPILE]"
+            t.execute();
+        }
+        p.getTasksByName("classes", true).each { t ->
+            println "-> $p.name [CLASSES]"
+            t.execute();
+        }
+        p.getTasksByName("jar", true).each { t ->
+            println "-> $p.name [JAR]"
             t.execute();
         }
     }
