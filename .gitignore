@@ -5,3 +5,4 @@ out
 build
 gradle
 gradlew*
+#test_git

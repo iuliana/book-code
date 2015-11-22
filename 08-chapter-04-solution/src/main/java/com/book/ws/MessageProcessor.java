@@ -14,6 +14,7 @@ public class MessageProcessor {
             }
             return new ServerMessage("[" + message.getName() + "]: " + message.getContent());
         }
+
         return new ServerMessage("[server]: Welcome " +message.getName());
     }
 }

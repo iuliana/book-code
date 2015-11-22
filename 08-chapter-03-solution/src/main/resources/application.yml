@@ -1,4 +1,4 @@
 app:
   port: 8084
   context: /boot
-  message: Testing, is this thing on?
+  message: Crap, this was not supposed to happen...

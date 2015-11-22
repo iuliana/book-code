@@ -22,7 +22,7 @@ subprojects {
 ext {
     springVersion = '4.2.1.RELEASE'
     springJpaVersion = '1.8.2.RELEASE'
-    springBootVersion = '1.2.6.RELEASE'
+    springBootVersion = '1.2.7.RELEASE'
     springSecurityVersion = '4.0.1.RELEASE'
     webflowVersion = '2.4.1.RELEASE'
     junitVersion = '4.12'
