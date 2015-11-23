@@ -20,7 +20,7 @@ subprojects {
 
 //We define versions for the libraries we will be using
 ext {
-    springVersion = '4.2.1.RELEASE'
+    springVersion = '4.2.3.RELEASE'
     springJpaVersion = '1.8.2.RELEASE'
     springBootVersion = '1.2.7.RELEASE'
     springSecurityVersion = '4.0.1.RELEASE'
