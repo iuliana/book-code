@@ -22,7 +22,7 @@ ext {
     springVersion = '4.2.4.RELEASE'
     springJpaVersion = '1.9.2.RELEASE'
     springSecurityVersion = '4.0.3.RELEASE'
-    springBootVersion = '1.4.0.RELEASE'
+    springBootVersion = '1.4.1.RELEASE'
     webflowVersion = '2.4.1.RELEASE'
     junitVersion = '4.12'
     mockitoVersion = '1.10.19'
