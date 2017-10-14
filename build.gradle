@@ -105,45 +105,49 @@ ext {
     ]
 }
 
-task allDeps << {
-    description 'Task used to display dependencies for all modules in the project'
-    subprojects.each { p ->
-        println()
-        println " $p.name ".center(60, '*')
-        println()
-        p.configurations.all.findAll { !it.allDependencies.empty }.each { c ->
-            println " ${c.name} ".center(60, '-')
-            c.allDependencies.each { dep ->
-                println "$dep.group:$dep.name:$dep.version"
+task allDeps {
+    doLast {
+        description 'Task used to display dependencies for all modules in the project'
+        subprojects.each { p ->
+            println()
+            println " $p.name ".center(60, '*')
+            println()
+            p.configurations.all.findAll { !it.allDependencies.empty }.each { c ->
+                println " ${c.name} ".center(60, '-')
+                c.allDependencies.each { dep ->
+                    println "$dep.group:$dep.name:$dep.version"
+                }
+                println "-" * 60
             }
-            println "-" * 60
         }
     }
 }
 
 
-task allCompile << {
-    description 'Task used to compile all modules in the project without running tests'
-    subprojects.each { p ->
-        p.getTasksByName("clean", true).each { t ->
-            println "-> $p.name [CLEAN]"
-            t.execute();
-        }
-        p.getTasksByName("compileJava", true).each { t ->
-            println "-> $p.name [COMPILE]"
-            t.execute();
-        }
-        p.getTasksByName("classes", true).each { t ->
-            println "-> $p.name [CLASSES]"
-            t.execute();
-        }
-        p.getTasksByName("jar", true).each { t ->
-            println "-> $p.name [JAR]"
-            t.execute();
+task allCompile {
+    doLast {
+        description 'Task used to compile all modules in the project without running tests'
+        subprojects.each { p ->
+            p.getTasksByName("clean", true).each { t ->
+                println "-> $p.name [CLEAN]"
+                t.execute();
+            }
+            p.getTasksByName("compileJava", true).each { t ->
+                println "-> $p.name [COMPILE]"
+                t.execute();
+            }
+            p.getTasksByName("classes", true).each { t ->
+                println "-> $p.name [CLASSES]"
+                t.execute();
+            }
+            p.getTasksByName("jar", true).each { t ->
+                println "-> $p.name [JAR]"
+                t.execute();
+            }
         }
     }
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.10'
+    gradleVersion = '4.2.1'
 }
